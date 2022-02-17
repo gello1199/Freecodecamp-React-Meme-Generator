@@ -55,3 +55,50 @@ body {
     font-style: normal;
 
 }
+
+.form--left-input {
+    position: absolute;
+    width: 230px;
+    height: 35px;
+    left: 40%;
+    top: 101px;
+}
+
+.form--right-input {
+    position: absolute;
+    width: 230px;
+    height: 35px;
+    left: 52.5%;
+    top: 101px;
+}
+
+.form--submit {
+    position: absolute;
+    width: 477px;
+    height: 40px;
+    left: 40%;
+    top: 151px;
+    
+    background: linear-gradient(90.41deg, #711F8D 1.14%, #A818DA 100%);
+    border-radius: 5px;
+
+}
+
+.form--submit-title {
+    /* position: absolute;
+    width: 166px;
+    height: 19px;
+    left: 191px;
+    top: 161px; */
+
+    font-family: Karla;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+
+    text-align: center;
+    /* letter-spacing: -0.1em; */
+
+    color: #FFFFFF;
+}
