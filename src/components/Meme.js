@@ -7,7 +7,8 @@ const Meme = () => {
         const memesArray = memesData.data.memes
         const randomNumber = Math.floor(Math.random() * memesArray.length)
         const url = memesArray[randomNumber].url
-        console.log(url)
+        // console.log(url)
+        
     }
 
     return (
@@ -25,6 +26,7 @@ const Meme = () => {
                     /> 
                 <button onClick={getMemeImage} className="form--submit">Get a new meme image 🖼</button>
             </div>
+           <img src={getMemeImage.url} />
         </main>
     );
 }
