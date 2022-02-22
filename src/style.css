@@ -84,3 +84,8 @@ body {
     color: white;
 
 }
+
+.meme--image {
+   margin-top: 20%;
+    max-width: 100%;
+}
