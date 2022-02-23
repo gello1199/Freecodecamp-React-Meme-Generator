@@ -3,6 +3,7 @@ import memesData from '../memesData';
 
 const Meme = () => {
     const [memeImage, setMemeImage] = useState("");
+    // useState hook
 
     function getMemeImage() {
         const memesArray = memesData.data.memes
