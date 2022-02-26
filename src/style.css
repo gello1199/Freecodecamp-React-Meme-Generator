@@ -86,6 +86,7 @@ body {
 }
 
 .meme--image {
-   margin-top: 20%;
+   margin-top: 25%;
     max-width: 100%;
+    border-radius: 3px;
 }

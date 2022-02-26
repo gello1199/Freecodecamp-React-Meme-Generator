@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import memesData from '../memesData';
 
 const Meme = () => {
-    const [memeImage, setMemeImage] = useState("");
+    const [memeImage, setMemeImage] = useState("http://i.imgflip.com/1bij.jpg");
     // useState hook
 
     function getMemeImage() {
