@@ -1,15 +1,14 @@
-import React from 'react';
+import React from "react"
 
-const Header = () => {
+export default function Header() {
     return (
-        <div className="header">
-            <img className="header--logo" src="https://www.freeiconspng.com/thumbs/troll-face-png/troll-face-png-1.png" alt="logo" />
-            <div className="header--title">
-                Meme Generator
-            </div>
-            <div className="header--subtitle">React Course - Project 3</div>
-        </div>
-    );
+        <header className="header">
+            <img 
+                src="https://www.freeiconspng.com/thumbs/troll-face-png/troll-face-png-1.png" 
+                className="header--image"
+            />
+            <h2 className="header--title">Meme Generator</h2>
+            <h4 className="header--project">React Course - Project 3</h4>
+        </header>
+    )
 }
-
-export default Header;
