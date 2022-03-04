@@ -1,41 +1,36 @@
-import React from "react"
-import memesData from "../memesData.js"
+import React, { useState, useEffect } from "react"
 
 export default function Meme() {
-    /**
-     * Challenge: 
-     * 1. Set up the text inputs to save to
-     *    the `topText` and `bottomText` state variables.
-     * 2. Replace the hard-coded text on the image with
-     *    the text being saved to state.
-     */
     
-    const [meme, setMeme] = React.useState({
+    const [meme, setMeme] = useState({
         topText: "",
         bottomText: "",
         randomImage: "http://i.imgflip.com/1bij.jpg" 
     })
-    const [allMemeImages, setAllMemeImages] = React.useState(memesData)
+    const [allMemes, setAllMemes] = useState([])
     
-    function handleChange(event) {
-        const { name, value } = event.target
-        setMeme(prevMeme => {
-            return {
-                ...prevMeme,
-                [name]: value
-            }
-        })
-    }
-    
+    useEffect(() => {
+        fetch("https://api.imgflip.com/get_memes")
+            .then(res => res.json())
+            .then(data => setAllMemes(data.data.memes))
+    }, [])
+        
     function getMemeImage() {
-        const memesArray = allMemeImages.data.memes
-        const randomNumber = Math.floor(Math.random() * memesArray.length)
-        const url = memesArray[randomNumber].url
+        const randomNumber = Math.floor(Math.random() * allMemes.length)
+        const url = allMemes[randomNumber].url
         setMeme(prevMeme => ({
             ...prevMeme,
             randomImage: url
         }))
         
+    }
+    
+    function handleChange(event) {
+        const {name, value} = event.target
+        setMeme(prevMeme => ({
+            ...prevMeme,
+            [name]: value
+        }))
     }
     
     return (
@@ -48,7 +43,6 @@ export default function Meme() {
                     name="topText"
                     value={meme.topText}
                     onChange={handleChange}
-                   
                 />
                 <input 
                     type="text"
@@ -57,7 +51,6 @@ export default function Meme() {
                     name="bottomText"
                     value={meme.bottomText}
                     onChange={handleChange}
-                    
                 />
                 <button 
                     className="form--button"
